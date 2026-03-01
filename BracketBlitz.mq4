@@ -261,6 +261,21 @@ void PlacePendingOrders()
 //+------------------------------------------------------------------+
 int OnInit()
 {
+   //--- Expiration check: March 28, 2026 (Real accounts only)
+   datetime expirationDate = D'2026.03.28 00:00:00';
+   if(!IsDemo() && TimeCurrent() >= expirationDate)
+   {
+      string msg = "BracketBlitz EA has expired!\n\n"
+                   + "Expiration Date: 2026.03.28\n\n"
+                   + "To renew your license, please contact:\n"
+                   + "Telegram: t.me/syariefazman\n\n"
+                   + "The EA will now be removed from the chart.";
+      MessageBox(msg, "BracketBlitz EA - License Expired", MB_OK | MB_ICONERROR);
+      Print("BracketBlitz EA EXPIRED on real account. Contact Telegram: t.me/syariefazman");
+      ExpertRemove();
+      return INIT_FAILED;
+   }
+
    Print("BracketBlitz EA initialized.");
    Print("Gap: ", GapPips, " pips | SL: ", StopLossPips, " pips | Trail: ", TrailingStopPips, " pips | Lifetime: ", OrderLifetimeSec, " sec");
 
