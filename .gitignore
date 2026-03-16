@@ -6,3 +6,7 @@
 # OS files
 .DS_Store
 Thumbs.db
+
+# Ignore MQ source files
+*.mq4
+*.mq5
