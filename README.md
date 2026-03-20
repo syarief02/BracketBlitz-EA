@@ -393,11 +393,13 @@ BracketBlitz EA removed. All pending orders deleted.
 
 ```
 BracketBlitz/
-├── BracketBlitz.mq4    # Expert Advisor source — MetaTrader 4
-├── BracketBlitz.mq5    # Expert Advisor source — MetaTrader 5
-├── .gitignore           # Excludes compiled .ex4/.ex5 files
+├── BracketBlitz.ex4     # Compiled EA — MetaTrader 4
+├── BracketBlitz.ex5     # Compiled EA — MetaTrader 5
+├── .gitignore           # Excludes source .mq4/.mq5 files to protect IP
 └── README.md            # This documentation
 ```
+
+> **Note:** Source code files (`.mq4`/`.mq5`) are excluded from the repository via `.gitignore` to protect intellectual property. Only compiled `.ex4`/`.ex5` files are distributed.
 
 ---
 
@@ -413,6 +415,7 @@ BracketBlitz/
 - 4/5-digit and 3-digit (JPY) broker auto-detection
 - Full MetaTrader 4 (MQL4) implementation
 - Full MetaTrader 5 (MQL5) implementation
+- Source code protection via .gitignore (only compiled files distributed)
 
 ---
 
